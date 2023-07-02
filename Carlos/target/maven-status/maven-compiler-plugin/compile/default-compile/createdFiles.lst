@@ -2,6 +2,7 @@ com\backend\Carlos\service\ExperienciaService.class
 com\backend\Carlos\CarlosApplication.class
 com\backend\Carlos\controller\ControHabilidad.class
 com\backend\Carlos\service\IPersonaService.class
+com\backend\Carlos\WebConfig.class
 com\backend\Carlos\service\HabilidadService.class
 com\backend\Carlos\controller\ControllerExperiencia.class
 com\backend\Carlos\model\Experiencia.class
