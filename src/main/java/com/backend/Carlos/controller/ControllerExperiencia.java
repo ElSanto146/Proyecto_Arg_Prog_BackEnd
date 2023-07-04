@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("experiencia")
+//@RequestMapping("experiencia")
 @CrossOrigin(origins = {"https://frondend-carlos.web.app"}) 
 public class ControllerExperiencia {
     
@@ -31,25 +31,25 @@ public class ControllerExperiencia {
     @Autowired
     private IExperienciaService expServ;
     
-    @PostMapping ("/new")
+    @PostMapping ("/experiencia/new")
     public void agregarExperiencia (@RequestBody Experiencia exp){
         expServ.crearExperiencia(exp);
        
     }
     
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping ("/experiencia/delete/{id}")
     public void borrarExperiencia (@PathVariable Long id){
         expServ.borrarExperiencia(id);
         
     }
     
-    @GetMapping ("/ver") //trae una lista
+    @GetMapping ("/experiencia/ver") //trae una lista
     @ResponseBody
     public List<Experiencia> verExperiencia () {
         return expServ.verExperiencia();
     }
     
-    @GetMapping ("/detalle/{id}")
+    @GetMapping ("/experiencia/detalle/{id}")
     public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
         int experiencia = expServ.buscarExperiencia(Long.MIN_VALUE).getId();
             return new ResponseEntity(experiencia, HttpStatus.OK);
@@ -57,7 +57,7 @@ public class ControllerExperiencia {
         
     
     
-    @PutMapping ("/editar/{id}")
+    @PutMapping ("/experiencia/editar/{id}")
     public Experiencia editExperiencia (@PathVariable Long id,
                                         @RequestParam ("desde") Date nuevoDesde,
                                         @RequestParam ("hasta") Date nuevoHasta,
