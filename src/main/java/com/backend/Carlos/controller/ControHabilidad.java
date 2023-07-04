@@ -20,32 +20,34 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/habilidad")
+//@RequestMapping("/habilidad")
 @CrossOrigin(origins = {"https://frondend-carlos.web.app"}) 
 public class ControHabilidad {
     
     @Autowired
     private IHabilidadService habiServ;
     
-    @PostMapping ("/new")
+    
+    @ResponseBody 
+    @PostMapping ("/habilidad/new")
     public void agregarHabilidad (@RequestBody Habilidad hab){
         habiServ.crearHabilidad(hab);
        
     }
     
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping ("/habilidad/delete/{id}")
     public void borrarHabilidad (@PathVariable Long id){
         habiServ.borrarHabilidad(id);
         
     }
     
-    @GetMapping ("/ver") //trae una lista
+    @GetMapping ("/habilidad/ver") //trae una lista
     @ResponseBody
     public List<Habilidad> verHabilidad () {
         return habiServ.verHabilidad();
     }
     
-    @GetMapping ("/detalle/{id}")
+    @GetMapping ("/habilidad/detalle/{id}")
     public ResponseEntity<Habilidad> getById(@PathVariable("id") int id){
         int habilidad = habiServ.buscarHabilidad(Long.MIN_VALUE).getId();
             return new ResponseEntity(habilidad, HttpStatus.OK);
@@ -53,7 +55,7 @@ public class ControHabilidad {
         
     
     
-    @PutMapping ("/editar/{id}")
+    @PutMapping ("/habilidad/editar/{id}")
     public Habilidad editHabilidad (@PathVariable Long id,
                                     @RequestParam ("habilidad") String nuevaHabilidad,
                                     @RequestParam ("porcentaje") int nuevoPorcentaje){
