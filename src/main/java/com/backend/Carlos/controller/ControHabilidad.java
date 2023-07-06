@@ -34,7 +34,7 @@ public class ControHabilidad {
         habiServ.crearHabilidad(hab);
        
     }
-    
+     
     @DeleteMapping ("/delete/{id}")
     public void borrarHabilidad (@PathVariable Long id){
         habiServ.borrarHabilidad(id);
