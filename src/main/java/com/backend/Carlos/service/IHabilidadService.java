@@ -18,10 +18,11 @@ public interface IHabilidadService {
     //método para borrar una persona
     public void borrarHabilidad (Long id);
     
+    //método para editar
+    public Habilidad edit (Habilidad hab);
+    
     //método para encontrar una persona
     public Habilidad buscarHabilidad (Long id);
-    
-    
-    
+       
     
 }

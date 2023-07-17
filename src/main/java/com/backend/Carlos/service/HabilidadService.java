@@ -34,6 +34,11 @@ public class HabilidadService implements IHabilidadService {
         return habiRepo.findById(id).orElse(null);
         //Se agrega el .orElse para que devuelva un null si no se encuentra a la persona
     }
+
+    @Override
+    public Habilidad edit(Habilidad hab) {
+        return habiRepo.save(hab);
+    } 
     
 
   
